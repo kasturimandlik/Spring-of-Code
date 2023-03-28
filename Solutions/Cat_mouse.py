@@ -5,8 +5,6 @@ class Solution:
         m, n = len(grid), len(grid[0])
         mouse_pos = cat_pos = None
         available = 0 
-        # available steps for mouse and cat
-# Search the start pos of mouse and cat
         for i in range(m):
             for j in range(n):
                 if grid[i][j] != '#':
@@ -19,10 +17,8 @@ class Solution:
         @functools.lru_cache(None)
         def dp(turn, mouse_pos, cat_pos):
             if turn == available * 2:
-                # We already search the whole touchable grid (5200 ms 57.5 MB)
                 return False
             if turn % 2 == 0:
-                # Mouse
                 i, j = mouse_pos
                 for di, dj in dirs:
                     for jump in range(mouseJump + 1):
@@ -34,7 +30,6 @@ class Solution:
                             break
                 return False
             else:
-                # Cat
                 i, j = cat_pos
                 for di, dj in dirs:
                     for jump in range(catJump + 1):

@@ -1,4 +1,7 @@
-dirs = [[1, 0], [-1, 0], [0, 1], [0, -1]]
+
+class Solution:
+    def canMouseWin(self, grid: List[str], catJump: int, mouseJump: int) -> bool:
+        dirs = [[1, 0], [-1, 0], [0, 1], [0, -1]]
         m, n = len(grid), len(grid[0])
         mouse_pos = cat_pos = None
         available = 0 
